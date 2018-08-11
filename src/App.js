@@ -26,7 +26,7 @@ class App extends Component {
 
     return (
       <div>
-        <div>
+        <div className="list-details">
           <ul>
             <li>Name of patient: {patientName}</li>
             <li>Organization Name: {organization}</li>
@@ -37,6 +37,10 @@ class App extends Component {
               <ul>{conditions}</ul>
             </li>
           </ul>
+        </div>
+        <div className="github-link">
+          You can find the the source code{' '}
+          <a href="https://github.com/shahzorHossain/SeamlessChallenge">here</a>
         </div>
       </div>
     );
