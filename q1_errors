@@ -1,0 +1,14 @@
+list of errors based on patient.json:
+on line 2: missing comma after the value "Patient"
+on line 4: missing opening bracket for the nested object
+on line 8: missing colon after "identifier"
+on line 14: missing comma after value of "system"
+on line 19: missing comma after value of "system"
+on line 27: missing comma after closing bracket ] (value of "family")
+on line 32: missing comma after closing bracket ]
+on line 33: missing closing " before the colon
+on line 32: missing comma after closing bracket ]
+on line 34: missing comma after value of "birthDate"
+on line 41: missing comma after list item "High blood pressure"
+on line 44: missing closing bracket ] after } (from opening bracket of line 9)
+on line 44 (EOF): missing closing bracket } after ] (from opening bracket of line 1)
