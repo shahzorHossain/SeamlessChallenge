@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import json from './q1.json';
 
 /*
@@ -15,8 +13,9 @@ List of all conditions:
 
 class App extends Component {
   render() {
-    const firstName = json['identifier'][0]['name'][0]['given'];
-    const lastName = json['identifier'][0]['name'][0]['family'];
+    const name = json['identifier'][0]['name'][0];
+    const firstName = name['given'];
+    const lastName = name['family'];
     const patientName = firstName + ' ' + lastName;
     const organization =
       json['identifier'][0]['managingOrganization']['display'];
@@ -27,7 +26,6 @@ class App extends Component {
 
     return (
       <div>
-        {/* <pre>{JSON.stringify(json, null, 2)}</pre> */}
         <div>
           <ul>
             <li>Name of patient: {patientName}</li>
