@@ -13,14 +13,23 @@ List of all conditions:
 
 class App extends Component {
   render() {
-    const name = json['identifier'][0]['name'][0];
-    const firstName = name['given'];
-    const lastName = name['family'];
+    const identifier = json['identifier'][0];
+    const name = identifier['name'][0];
+
+    // for error checking we've set up custom names
+    // in case there are missing information in the json
+    const firstName =
+      name['given'] !== '' ? name['given'] : 'undefined first name';
+    const lastName =
+      name['family'] !== '' ? name['family'] : 'undefined last name';
     const patientName = firstName + ' ' + lastName;
     const organization =
-      json['identifier'][0]['managingOrganization']['display'];
-    const gender = json['identifier'][0]['gender'];
-    const conditionsList = json['identifier'][0]['conditions'];
+      identifier['managingOrganization']['display'] !== ''
+        ? identifier['managingOrganization']['display']
+        : 'undefined organization name';
+    const gender =
+      identifier['gender'] !== '' ? identifier['gender'] : 'undefined gender';
+    const conditionsList = identifier['conditions'];
     const count = conditionsList.length;
     const conditions = conditionsList.map(p => <li>{p}</li>);
 
